@@ -1,0 +1,40 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* :LineIncrement 10
+* <Natural Source Header
+*******************************************************************************
+*  Programa: MENU                                                             *
+*  Objetivo: Entrada para as funcoes          **                                *
+*                                                                             *
+*                                                                             *
+*******************************************************************************
+DEFINE DATA
+LOCAL
+1 #OPCAO (A1)
+1 #TESTE (A10)
+1 NULL
+2 TSITEMS (A/1:*) DYNAMIC
+END-DEFINE
+* INCLUDE CPYCODE **************
+* PERFORM INITIALIZE-GLOBAL
+SET KEY PF3 NAMED 'SAIR'
+SET KEY PF4 NAMED 'CONT'
+INPUT USING MAP 'MMENU'
+*
+IF *PF-KEY = 'PF3'
+  ESCAPE ROUTINE
+END-IF
+*
+DECIDE ON FIRST VALUE OF #OPCAO
+  VALUE '1'
+    FETCH RETURN 'O54120A0'
+  VALUE '2'
+    FETCH RETURN 'O54120A3'
+  VALUE '2'
+    ESCAPE ROUTINE
+  NONE
+    REINPUT 'OPCAO INVALIDA....XXX '
+END-DECIDE
+*
+END

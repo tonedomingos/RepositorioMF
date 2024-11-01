@@ -1,0 +1,31 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* :LineIncrement 10
+* <Natural Source Header
+DEFINE DATA
+LOCAL
+1 VEHICLE VIEW VEHICLES-DB208
+  2 REG-NUM        (A15)
+  2 PERSONNEL-ID   (A8)
+  2 MAKE           (A20)
+  2 MODEL          (A20)
+  2 CLASS          (A1)
+*
+1 FLAG             (A1)
+END-DEFINE
+*
+*
+*
+FIND VEHICLE WITH VEHICLE.CLASS = '*'
+ DELETE
+MOVE 1 TO FLAG
+WRITE 'DATA DELETED CONTAINING CLASS = *' '=' PERSONNEL-ID
+END-FIND
+*
+END TRANSACTION
+*
+IF FLAG NE  '1'
+ WRITE 'NO DATA DELETED CONTAINING CLASS = *' '=' PERSONNEL-ID
+END-IF
+END

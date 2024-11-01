@@ -1,0 +1,11 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+DEFINE DATA LOCAL
+01    VAR        (A10)
+END-DEFINE
+*
+DISPLAY 'HELLO - PGM TEST'
+*
+END

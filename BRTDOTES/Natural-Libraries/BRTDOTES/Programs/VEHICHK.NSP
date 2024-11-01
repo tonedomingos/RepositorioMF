@@ -1,0 +1,24 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* :LineIncrement 10
+* <Natural Source Header
+DEFINE DATA
+LOCAL
+1 VEHICLE VIEW VEHICLES-DB208
+  2 REG-NUM        (A15)
+  2 PERSONNEL-ID   (A8)
+  2 MAKE           (A20)
+  2 MODEL          (A20)
+  2 CLASS          (A1)
+END-DEFINE
+*
+FIND VEHICLE WITH
+VEHICLE.CLASS EQ '*'
+*
+ IF NO RECORD FOUND
+  WRITE 'NO ETRY FOUND FOR CLASS *'
+ END-NOREC
+DISPLAY REG-NUM PERSONNEL-ID MAKE MODEL
+END-FIND
+END

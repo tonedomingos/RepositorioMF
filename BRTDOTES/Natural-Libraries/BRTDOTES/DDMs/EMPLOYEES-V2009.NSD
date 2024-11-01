@@ -1,0 +1,133 @@
+DB: 019 FILE: 009  - EMPLOYEES-V2009                  DEFAULT SEQUENCE:
+                              Cataloged by RKE      on 2009-08-06 13:17:58
+TYPE: ADABAS
+T L DB Name                              F Leng  S D Remark
+- - -- --------------------------------  - ----  - - ------------------------
+*      >Natural Source Header 000000
+*      :CP
+*      
+*      
+*      :LineIncrement 10
+*      <Natural Source Header
+G 1 A0 PERSONNEL-DATA
+  2 AA PERSONNEL-ID                      A    8    D
+       HD=PERSONNEL/ID
+*      CNNNNNNN
+*      C=COUNTRY
+G 2 AB ID-DATA
+  3 AC PERSONNEL-NO                      I    4    D
+  3 AD ID-CARD                           B    8  N
+*      HF-OPTION IN FDT
+  3 AE L@SIGNATURE                       I    4      LENGTH INDICATOR
+  3 AE SIGNATURE                         A       N   LA
+       LE=16381
+       OPTIONS=LA
+G 1 B0 FULL-NAME
+  2 BA FIRST-NAME                        U   20  N
+  2 BB MIDDLE-NAME                       U   20  N
+  2 BC NAME                              U   25  N D
+  1 CA MAR-STAT                          A    1  F
+       HD=MARTIAL/STATUS
+*      M=MARRIED
+*      S=SINGLE
+*      D=DIVORCED
+*      W=WIDOWED
+  1 DA SEX                               A    1  F
+       HD=S/E/X
+  1 EA BIRTH                             D    6  N D NC
+       HD=DATE/OF/BIRTH
+       EM=YYYY-MM-DD
+  1 EA N@BIRTH                           I    2    D NULL INDICATOR
+P 1 F0 PRIVATE-ADDRESS
+M 2 FA PRIVATE-ADDRESS-LINE              U   30  N
+       HD=PRIVATE-ADDRESS
+  2 FB PRIVATE-CITY                      U   20  N D
+  2 FC PRIVATE-POST-CODE                 A   10  N
+       HD=PRIVATE/POST CODE
+  2 FD PRIVATE-COUNTRY                   A    3  N
+       HD=PRIVATE/COUNTRY
+G 2 F1 PRIVATE-PHONE-EMAIL
+  3 FE PRIVATE-AREA-CODE                 A    6  N
+       HD=PRIVATE/AREA CODE
+  3 FF PRIVATE-PHONE                     A   15  N
+  3 FG PRIVATE-FAX                       A   15  N
+  3 FH PRIVATE-MOBILE                    A   15  N
+M 3 FI PRIVATE-EMAIL                     A   80  N D
+P 1 I0 BUSINESS-ADDRESS
+M 2 IA BUSINESS-ADDRESS-LINE             U   20  N
+       HD=BUSINESS-ADDRESS
+  2 IB BUSINESS-CITY                     U   20  N D
+  2 IC BUSINESS-POST-CODE                A   10  N
+       HD=BUSINESS/POST CODE
+  2 ID BUSINESS-COUNTRY                  A    3  N
+       HD=BUSINESS/COUNTRY
+  2 IE BUSINESS-ROOM-NUMBER              A    5  N
+       HD=ROOM
+G 2 I1 BUSINESS-PHONE-EMAIL
+  3 IF BUSINESS-AREA-CODE                A    6  N
+       HD=BUSINESS/AREA CODE
+  3 IG BUSINESS-PHONE                    A   15  N
+  3 IH BUSINESS-FAX                      A   15  N
+  3 II BUSINESS-MOBILE                   A   15  N
+M 3 IJ BUSINESS-EMAIL                    A   80  N D
+  1 JA DEPARTMENT                        A    6    D
+  1 KA JOB-TITLE                         U   33  N D
+       HD=CURRENT/POSITION
+P 1 L0 INCOME
+*      ANNUAL INCOMES
+*      DURING YEARS WITH THE
+*      INTERNATIONAL ENTERPRISE
+  2 LA CURRENCY-CODE                     A    3  N
+       HD=CURRENCY/CODE
+  2 LB SALARY                            P  9.2  N
+       HD=ANNUAL/SALARY
+M 2 LC BONUS                             P  9.2  N D
+*      BONUS PER YEAR
+*      IN CURRENCY UNIT
+  1 MA TOTAL-INCOME                      F    4  N
+G 1 N0 LEAVE-DATA
+*      LEAVE/VACATION INFO
+*      FOR EMPLOYEE WITHIN 1 YEAR
+  2 NA LEAVE-DUE                         N  2.0
+       HD=LEAVE/DUE
+*      VACATION DAYS/YEAR
+*      EMPLOYEE IS ENTITLED TO
+  2 NB LEAVE-TAKEN                       N  2.1  N
+*      VACATION DAYS TAKEN
+*      IN THIS YEAR
+P 1 O0 LEAVE-BOOKED
+  2 OA LEAVE-START                       N  8.0  N
+       HD=LEAVE/START
+       EM=9999/99/99
+  2 OB LEAVE-END                         N  8.0  N
+       HD=LEAVE/END
+       EM=9999/99/99
+M 1 PA LANGUAGE                          A    3  N D
+       HD=LANG/SPOKEN
+  1 QA LAST-UPDATE                       T   12
+  1 RA L@PICTURE                         I    4      LENGTH INDICATOR
+  1 RA PICTURE                           A       N   LOB
+       DY
+       OPTIONS=LB
+P 1 S0 DOCUMENTS
+  2 SA DOCUMENT-DESCRIPTION              U   40  N
+  2 SB DOCUMENT-TYPE                     A    3  N
+M 2 SC L@DOCUMENT                        I    4      LENGTH INDICATOR
+M 2 SC DOCUMENT                          A       N   LOB
+       DY
+       OPTIONS=LB
+  1 H1 LEAVE-LEFT                        B    5  N S
+       HD=LEAVE/REMAINING
+*      EXISTS OF
+*      LEAVE-DUE AND LEAVE-TAKEN
+  1 S1 DEPARTMENT-SECTION                A    2    U
+       HD=SECTION
+*      EXISTS OF
+*      DEPARTMENT(1-2)
+  1 S2 DEPARTMENT-PERSON                 A   46  N S
+*      EXISTS OF
+*      DEPARTMENT AND NAME(1-20)
+P 1 S3 CURRENCY-SALARY                   A    9    S
+*      EXISTS OF
+*      CURRENCY-CODE AND SALARY
+******DDM OUTPUT TERMINATED******

@@ -1,0 +1,15 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Subprogram TESTEWS.
+/**
+/** :author brtdo
+/* TODO: Enter your code here
+DEFINE DATA GLOBAL USING GDEMOBOR
+PARAMETER
+1 #NOME(A40)
+1 #ENC (A10)
+END-DEFINE
+COMPRESS #NOME  'ANALISTA' TO #NOME
+END

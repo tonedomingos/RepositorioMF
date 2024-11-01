@@ -1,0 +1,13 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* :LineIncrement 10
+* <Natural Source Header
+* TESTE DE COPYCODE
+*
+*
+ON ERROR
+IF *ERROR-NR = 3145
+   MOVE 9 TO #OPCAO
+END-IF
+END-ERROR

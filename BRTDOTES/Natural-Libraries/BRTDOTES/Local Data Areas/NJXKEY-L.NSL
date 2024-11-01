@@ -1,0 +1,25 @@
+DEFINE DATA LOCAL
+/* >Natural Source Header 000000
+/* :Mode S
+/* :CP windows-1252
+/* <Natural Source Header
+1 PFKEY (1:*)
+  2 METHOD (A) DYNAMIC
+  2 NAME (A) DYNAMIC
+  2 TITLE (A) DYNAMIC
+  2 VISIBLE (L)
+/* */* *
+1 CPFKEY (I2)
+  CONST
+  <53>
+1 METHODS (A4/1:CPFKEY)
+  INIT
+  <'ENTR','PF1','PF2','PF3','PF4','PF5','PF6','PF7',
+  'PF8','PF9','PF10','PF11','PF12','PF13','PF14',
+  'PF15','PF16','PF17','PF18','PF19','PF20','PF21',
+  'PF22','PF23','PF24','PF25','PF26','PF27','PF28',
+  'PF29','PF30','PF31','PF32','PF33','PF34','PF35',
+  'PF36','PF37','PF38','PF39','PF40','PF41','PF42',
+  'PF43','PF44','PF45','PF46','PF47','PF48','PA1',
+  'PA2','PA3','CLR'>
+END-DEFINE

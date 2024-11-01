@@ -1,0 +1,57 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* :LineIncrement 10
+* <Natural Source Header
+DEFINE DATA
+LOCAL
+1 VEH VIEW VEHI-BRZ-DB204
+  2 REG-NUM
+  2 PERSONNEL-ID
+  2 MAKE
+  2 MODEL
+  2 COLOR
+  2 YEAR
+  2 CLASS
+01 #LOOP        (A01)    INIT <'Y'>
+01 #P-ID        (A08)    INIT <'20002000'>
+01 #MAKE        (A20)
+01 #MODEL       (A20)
+01 #COLOR       (A10)
+01 #YEAR        (N04)
+END-DEFINE
+*
+*
+SET KEY PF3='EXIT'
+*
+REPEAT WHILE #LOOP = 'Y'
+*
+  INPUT // 'VEH UPDATE - PERSONNELID:' #P-ID (AD=MILT)
+  IF *PF-KEY = 'PF3' OR #P-ID = ' '
+    MOVE 'N'   TO  #LOOP
+  ELSE
+    RESET #MAKE #MODEL #COLOR #YEAR
+    FIND VEH WITH VEH.PERSONNEL-ID EQ #P-ID
+      MOVE VEH.MAKE  TO #MAKE
+      MOVE VEH.MODEL TO #MODEL
+      MOVE VEH.COLOR TO #COLOR
+      MOVE VEH.YEAR  TO #YEAR
+      INPUT // 'UPDATE PERSONNELID:' #P-ID (AD=O)        ///
+        '              MAKE       :' #MAKE (AD=MILT)      //
+        '              MODEL      :' #MODEL (AD=MILT)     //
+        '              COLOR      :' #COLOR (AD=MILT)     //
+        '              YEAR       :' #YEAR (AD=MILT)      ///
+        '              CLASS      :' CLASS (AD=O)
+      MOVE #MAKE     TO VEH.MAKE
+      MOVE #MODEL    TO VEH.MODEL
+      MOVE #COLOR    TO VEH.COLOR
+      MOVE #YEAR     TO VEH.YEAR
+      VEH.CLASS := '*'
+      UPDATE
+      END TRANSACTION
+    END-FIND
+*
+   END-IF
+END-REPEAT
+*
+END  /* PROGRAM */
