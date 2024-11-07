@@ -1,0 +1,13 @@
+DEFINE DATA GLOBAL
+/* >Natural Source Header 000000
+/* :Mode S
+/* :CP
+/* <Natural Source Header
+*  /** New Global Data Area GDEMOBOR.
+*  /**
+*  /** :author brtdo
+*  /* TODO Enter your data definition      s here
+1 +SISTEMA (A10)
+  INIT
+  <'SAG'>
+END-DEFINE

@@ -1,0 +1,81 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP IBM01140
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY NAT 0902020006 ---
+* INPUT USING MAP 'XXXXXXXX'
+FORMAT PS=022 LS=080 ZP=OFF SG=OFF KD=ON  IP=OFF
+* MAP2: MAP PROFILES *****************************        410***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)¬&:+(                       *
+* 024079        N0NNUCN             X        01 SYSDBA  YR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 001T 'SAG'
+ 025T 'CADASTRO DE FORNECEDORES'
+ 066T 'Data:'
+ 072T *DATE /*.01S008 A008 .
+      (AD=ODLT )
+/
+ 001T 'Objeto: M000001_'
+ 066T 'Hora:'
+ 072T *TIMX /*.01S008 T    .
+      (AD=ODLT )
+/
+ 005T 'Matricula'
+ 015T '00001892383_____'
+/
+ 005T 'Orgao'
+ 015T 'SECRETARIA DE FINANCAS'
+/
+/
+/
+ 005T 'SEL Nomes do Fornecedor                     CNPJ'
+/
+ 005T ' _'
+ 009T 'Solucções Inteligentes LTDA._________'
+ 049T '877.068.064.191/11'
+/
+ 005T ' _'
+ 009T 'Harmonia Finanças____________________'
+ 049T '081.982.190.883/00'
+/
+ 005T ' _'
+ 009T 'Marketing Solucoes___________________'
+ 049T '565.003.778.956/00'
+/
+ 005T ' _'
+ 009T 'Talentos Conectados__________________'
+ 049T '584.013.866.371/00'
+/
+ 005T ' _'
+ 009T 'Vida Leve LTDA.______________________'
+ 049T '261.896.296.157/54'
+/
+ 005T ' _'
+ 009T 'Nimbus Infrmatica____________________'
+ 049T '794.673.019.102/00'
+/
+ 005T ' _'
+ 009T 'Zypher materiais de consumo__________'
+ 049T '845.015.960.792/29'
+/
+ 005T ' _'
+ 009T 'Primeira Linha Serviços______________'
+ 049T '284.772.620.107/00'
+/
+ 005T ' _'
+ 009T 'Quantum Consultoria:_________________'
+ 049T '287.881.285.385/00'
+/
+ 005T ' _'
+ 009T 'Solucções Inteligentes LTDA._________'
+ 049T '733.649.413.374/00'
+/
+/
+/
+/
+/
+* MAP2: VALIDATION *****************************************************
+* MAP2: END OF MAP *****************************************************
+END

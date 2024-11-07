@@ -1,0 +1,37 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+/** New Subprogram GETEMP.
+/**
+/** :author brmdo
+/* TODO Enter your code here
+DEFINE DATA
+PARAMETER
+01 #EMP-ID         (A08)
+01 #EMP-NAME       (A20)
+01 #EMP-SNAME      (A20)
+01 #EMP-CITY       (A20)
+01 #RESULT         (A12)
+LOCAL
+01 V-EMP VIEW OF EMPLOYEES-DB11177
+02 PERSONNEL-ID
+02 FIRST-NAME
+02 NAME
+02 CITY
+END-DEFINE
+*
+IF #EMP-ID EQ ' '
+  MOVE 'ID: Empty' TO #RESULT
+ELSE
+  FIND V-EMP WITH PERSONNEL-ID = #EMP-ID
+    IF NO RECORDS FOUND
+      MOVE 'ID: NotFound' TO #RESULT
+    END-NOREC
+    MOVE FIRST-NAME   TO  #EMP-NAME
+    MOVE NAME         TO  #EMP-SNAME
+    MOVE CITY         TO  #EMP-CITY
+  END-FIND
+END-IF
+*
+END

@@ -1,0 +1,56 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP IBM01140
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY NAT 0901010001 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     #OPCAO
+DEFINE DATA PARAMETER
+1 #OPCAO (A001)
+END-DEFINE
+FORMAT PS=024 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        410***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)¬&:+(                       *
+* 024079        N0NNUCN             X        01 SYSDBA  NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 001T 'SAG'
+ 024T 'Administracao de Pessoal'
+ 066T 'Data:'
+ 072T *DATE  (AD=DLOFHT ) /*.01S008 A008 .
+/
+ 001T 'MMENU'
+ 066T 'Hora:'
+ 072T *TIMX  (AD=DLOFHT ) /*.01S008 T    .
+/
+/
+/
+/
+ 038T 'MENU'
+/
+/
+/
+ 026T '1 - Movimentacao Financeira'
+/
+/
+ 026T '2 - Bonus'
+/
+/
+ 026T '3 - Sair'
+/
+/
+/
+ 026T 'Opcao :'
+ 035T #OPCAO  (AD=DLMFHT' ' ) /*.99U001 A001 .
+/
+/
+/
+/
+/
+/
+/
+/
+* MAP2: VALIDATION *****************************************************
+* MAP2: END OF MAP *****************************************************
+END

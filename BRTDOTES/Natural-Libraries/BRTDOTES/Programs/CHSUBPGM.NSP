@@ -1,0 +1,20 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP IBM01140
+* :LineIncrement 10
+* <Natural Source Header
+DEFINE DATA LOCAL
+1 #TL-CARGO (A030)
+1 #TL-MATRICULA (A08)
+1 #TL-NOME (A039)
+1 #TL-ANIV (D)
+END-DEFINE
+MOVE 'JOHN' TO #TL-NOME
+CALLNAT 'SUBPGM'   #TL-CARGO
+  #TL-MATRICULA
+  #TL-NOME
+  #TL-ANIV
+  END
+
+
+
